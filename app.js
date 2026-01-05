@@ -3,10 +3,12 @@
 // ============================================
 
 const LANG_NAMES = { en: 'EN', sv: 'SV', de: 'DE', es: 'ES', pl: 'PL' };
+let currentLang = 'en';
 
 function setLanguage(lang) {
     const t = TRANSLATIONS[lang];
     if (!t) return;
+    currentLang = lang;
 
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
@@ -26,6 +28,9 @@ function setLanguage(lang) {
         btn.classList.toggle('active', isActive);
     });
 
+    // Re-render products with new language
+    renderProducts();
+
     localStorage.setItem('lang', lang);
     closeLangDropdown();
 }
@@ -38,12 +43,40 @@ function closeLangDropdown() {
     document.querySelector('.lang-selector').classList.remove('open');
 }
 
+// Render products from PRODUCTS array
+function renderProducts() {
+    const grid = document.getElementById('products-grid');
+    if (!grid || !PRODUCTS) return;
+
+    const t = TRANSLATIONS[currentLang];
+    grid.innerHTML = PRODUCTS.map(product => `
+        <div class="product-card">
+            <div class="product-header">
+                <span class="product-badge${product.status === 'soon' ? ' soon' : ''}">
+                    ${product.status === 'available' ? (t['products.available'] || 'Available') : (t['products.soon'] || 'Soon')}
+                </span>
+            </div>
+            <h3>${product.name}</h3>
+            <p>${t[product.descKey] || product.descKey}</p>
+            <div class="product-meta">
+                <div class="product-tags">
+                    ${product.tags.map(tag => `<span class="product-tag">${tag}</span>`).join('')}
+                </div>
+                <div class="product-price">${product.price}</div>
+            </div>
+        </div>
+    `).join('');
+}
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     // Close dropdown when clicking outside
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.lang-selector')) closeLangDropdown();
     });
+
+    // Render products
+    renderProducts();
 
     // Set initial language
     const savedLang = localStorage.getItem('lang');
