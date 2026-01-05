@@ -6,8 +6,6 @@
     <meta name="description" content="Lone Lodge Studios - Swedish product studio. We build software, tools, and games.">
     <meta name="keywords" content="Software, Tools, Game Development, Unreal Engine, Indie Studio, Sweden">
     <meta name="author" content="Lone Lodge Studios">
-
-    <!-- Open Graph -->
     <meta property="og:title" content="Lone Lodge Studios">
     <meta property="og:description" content="Swedish product studio">
     <meta property="og:type" content="website">
@@ -17,624 +15,10 @@
 
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="apple-touch-icon" href="logo.png">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg-primary: #000000;
-            --bg-secondary: #0a0a0a;
-            --bg-card: #111111;
-            --border: #1a1a1a;
-            --border-hover: #262626;
-            --text-primary: #ededed;
-            --text-secondary: #737373;
-            --text-tertiary: #525252;
-            --accent: #d97706;
-            --accent-subtle: rgba(217, 119, 6, 0.08);
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            min-height: 100vh;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            padding: 0 2rem;
-            height: 56px;
-            display: flex;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav-content {
-            max-width: 1100px;
-            width: 100%;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.625rem;
-            text-decoration: none;
-            color: var(--text-primary);
-        }
-
-        .logo-icon {
-            width: 28px;
-            height: 28px;
-            border-radius: 6px;
-            object-fit: contain;
-        }
-
-        .logo-text {
-            font-weight: 500;
-            font-size: 0.9375rem;
-            letter-spacing: -0.01em;
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.8125rem;
-            font-weight: 500;
-            transition: color 0.15s;
-        }
-
-        .nav-links a:hover {
-            color: var(--text-primary);
-        }
-
-        /* Language Selector */
-        .lang-selector {
-            position: relative;
-        }
-
-        .lang-btn {
-            display: flex;
-            align-items: center;
-            gap: 0.375rem;
-            padding: 0.375rem 0.625rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            color: var(--text-secondary);
-            font-size: 0.75rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.15s;
-        }
-
-        .lang-btn:hover {
-            border-color: var(--border-hover);
-            color: var(--text-primary);
-        }
-
-        .lang-dropdown {
-            position: absolute;
-            top: calc(100% + 0.5rem);
-            right: 0;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 0.25rem;
-            min-width: 120px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-4px);
-            transition: all 0.15s;
-        }
-
-        .lang-selector.open .lang-dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .lang-option {
-            display: block;
-            width: 100%;
-            padding: 0.5rem 0.75rem;
-            background: none;
-            border: none;
-            color: var(--text-secondary);
-            font-size: 0.8125rem;
-            text-align: left;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: all 0.15s;
-        }
-
-        .lang-option:hover {
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-        }
-
-        .lang-option.active {
-            color: var(--accent);
-        }
-
-        /* Hero */
-        .hero-wrapper {
-            position: relative;
-            min-height: 100vh;
-            overflow: hidden;
-        }
-
-        .hero {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            text-align: left;
-            padding: 10rem 2rem 4rem;
-            max-width: 1100px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-image {
-            position: absolute;
-            top: 20%;
-            bottom: 10%;
-            left: 45%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 1800px;
-            height: auto;
-            mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 70%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 70%, transparent 100%);
-            opacity: 0.9;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 600;
-            line-height: 1.15;
-            margin-bottom: 1.25rem;
-            letter-spacing: -0.03em;
-            color: var(--text-primary);
-        }
-
-        .hero p {
-            font-size: 1.0625rem;
-            color: var(--text-secondary);
-            max-width: 480px;
-            margin-bottom: 2.5rem;
-            line-height: 1.7;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.625rem 1.25rem;
-            border-radius: 6px;
-            font-size: 0.8125rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.15s;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background: var(--text-primary);
-            color: var(--bg-primary);
-        }
-
-        .btn-primary:hover {
-            background: #ffffff;
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-secondary);
-            border: 1px solid var(--border);
-        }
-
-        .btn-secondary:hover {
-            color: var(--text-primary);
-            border-color: var(--border-hover);
-            background: var(--bg-card);
-        }
-
-        /* Sections */
-        .section {
-            padding: 5rem 2rem;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            margin-bottom: 3rem;
-        }
-
-        .section-label {
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.75rem;
-        }
-
-        .section-header h2 {
-            font-size: 1.75rem;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.75rem;
-        }
-
-        .section-header p {
-            color: var(--text-secondary);
-            max-width: 500px;
-            font-size: 0.9375rem;
-        }
-
-        /* Services */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
-            background: var(--border);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .service-card {
-            background: var(--bg-secondary);
-            padding: 2rem;
-            transition: background 0.15s;
-        }
-
-        .service-card:hover {
-            background: var(--bg-card);
-        }
-
-        .service-icon {
-            width: 36px;
-            height: 36px;
-            background: var(--accent-subtle);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.25rem;
-            color: var(--accent);
-        }
-
-        .service-card h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.01em;
-        }
-
-        .service-card p {
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-            line-height: 1.6;
-        }
-
-        /* Products */
-        .products-section {
-            border-top: 1px solid var(--border);
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
-        }
-
-        .product-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.5rem;
-            transition: border-color 0.15s;
-        }
-
-        .product-card:hover {
-            border-color: var(--border-hover);
-        }
-
-        .product-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 0.75rem;
-        }
-
-        .product-badge {
-            font-size: 0.6875rem;
-            font-weight: 500;
-            padding: 0.25rem 0.5rem;
-            background: var(--accent-subtle);
-            color: var(--accent);
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-        }
-
-        .product-badge.soon {
-            background: var(--bg-card);
-            color: var(--text-tertiary);
-        }
-
-        .product-card h3 {
-            font-size: 0.9375rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.01em;
-        }
-
-        .product-card p {
-            color: var(--text-secondary);
-            font-size: 0.8125rem;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
-        .product-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .product-tags {
-            display: flex;
-            gap: 0.375rem;
-        }
-
-        .product-tag {
-            font-size: 0.6875rem;
-            padding: 0.25rem 0.5rem;
-            background: var(--bg-card);
-            color: var(--text-tertiary);
-            border-radius: 4px;
-        }
-
-        .product-price {
-            font-size: 0.9375rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        /* About */
-        .about-section {
-            border-top: 1px solid var(--border);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .about-text p {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            font-size: 0.9375rem;
-            line-height: 1.7;
-        }
-
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1px;
-            background: var(--border);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .stat {
-            background: var(--bg-secondary);
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        .stat-value {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.25rem;
-            letter-spacing: -0.02em;
-        }
-
-        .stat-label {
-            color: var(--text-tertiary);
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-        }
-
-        /* Contact */
-        .contact-section {
-            border-top: 1px solid var(--border);
-        }
-
-        .contact-box {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2rem;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-        }
-
-        .contact-box h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.375rem;
-            letter-spacing: -0.01em;
-        }
-
-        .contact-box p {
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-        }
-
-        .contact-email {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.625rem 1rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            color: var(--text-primary);
-            font-size: 0.8125rem;
-            text-decoration: none;
-            transition: all 0.15s;
-        }
-
-        .contact-email:hover {
-            border-color: var(--border-hover);
-        }
-
-        /* Footer */
-        footer {
-            padding: 2rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .footer-content {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .footer-links a {
-            color: var(--text-tertiary);
-            text-decoration: none;
-            font-size: 0.8125rem;
-            transition: color 0.15s;
-        }
-
-        .footer-links a:hover {
-            color: var(--text-secondary);
-        }
-
-        .footer-copy {
-            color: var(--text-tertiary);
-            font-size: 0.8125rem;
-        }
-
-        .footer-socials {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-socials a {
-            color: var(--text-tertiary);
-            transition: color 0.15s;
-        }
-
-        .footer-socials a:hover {
-            color: var(--text-primary);
-        }
-
-        /* Responsive */
-        @media (max-width: 900px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .contact-box {
-                flex-direction: column;
-                text-align: center;
-                gap: 1.5rem;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
-            .hero {
-                padding: 6rem 1.5rem 4rem;
-            }
-
-            .section {
-                padding: 3rem 1.5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -654,9 +38,7 @@
                 <div class="lang-selector">
                     <button class="lang-btn" onclick="toggleLangDropdown()">
                         <span id="current-lang">EN</span>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M6 9l6 6 6-6"/>
-                        </svg>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                     </button>
                     <div class="lang-dropdown">
                         <button class="lang-option active" onclick="setLanguage('en')">English</button>
@@ -690,36 +72,24 @@
             <h2 data-i18n="work.title">From concept to shipped product</h2>
             <p data-i18n="work.subtitle">We build what we believe in.</p>
         </div>
-
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-                        <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-                        <path d="M2 2l7.586 7.586"></path>
-                        <circle cx="11" cy="11" r="2"></circle>
-                    </svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
                 </div>
                 <h3 data-i18n="work.software.title">Software & Apps</h3>
                 <p data-i18n="work.software.desc">Standalone tools and applications. Currently building Quill, a focused writing tool for creators.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                        <polyline points="2 17 12 22 22 17"></polyline>
-                        <polyline points="2 12 12 17 22 12"></polyline>
-                    </svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
                 </div>
                 <h3 data-i18n="work.games.title">Game Development</h3>
                 <p data-i18n="work.games.desc">Games and interactive experiences built with Unreal Engine. From prototype to release.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-                    </svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
                 </div>
                 <h3 data-i18n="work.plugins.title">Unreal Plugins</h3>
                 <p data-i18n="work.plugins.desc">Production-ready plugins for Unreal Engine. Nova UI ecosystem and more.</p>
@@ -734,64 +104,40 @@
             <h2>Nova UI Ecosystem</h2>
             <p data-i18n="products.subtitle">Professional UI systems for Unreal Engine. Zero dependencies, fully production-ready.</p>
         </div>
-
         <div class="products-grid">
             <div class="product-card">
-                <div class="product-header">
-                    <span class="product-badge" data-i18n="products.available">Available</span>
-                </div>
+                <div class="product-header"><span class="product-badge" data-i18n="products.available">Available</span></div>
                 <h3>Nova Radial Menu</h3>
                 <p data-i18n="products.radial.desc">Shader-based radial menu with multi-page support and complete input flexibility.</p>
                 <div class="product-meta">
-                    <div class="product-tags">
-                        <span class="product-tag">C++</span>
-                        <span class="product-tag">UE5</span>
-                    </div>
+                    <div class="product-tags"><span class="product-tag">C++</span><span class="product-tag">UE5</span></div>
                     <div class="product-price">$24.99</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <div class="product-header">
-                    <span class="product-badge soon" data-i18n="products.soon">Soon</span>
-                </div>
+                <div class="product-header"><span class="product-badge soon" data-i18n="products.soon">Soon</span></div>
                 <h3>Nova Toast</h3>
                 <p data-i18n="products.toast.desc">Notification system with queuing, stacking, and customizable animations.</p>
                 <div class="product-meta">
-                    <div class="product-tags">
-                        <span class="product-tag">C++</span>
-                        <span class="product-tag">UE5</span>
-                    </div>
+                    <div class="product-tags"><span class="product-tag">C++</span><span class="product-tag">UE5</span></div>
                     <div class="product-price">$19.99</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <div class="product-header">
-                    <span class="product-badge soon" data-i18n="products.soon">Soon</span>
-                </div>
+                <div class="product-header"><span class="product-badge soon" data-i18n="products.soon">Soon</span></div>
                 <h3>Nova Damage Numbers</h3>
                 <p data-i18n="products.damage.desc">Performant floating combat text with pooling and screen-space positioning.</p>
                 <div class="product-meta">
-                    <div class="product-tags">
-                        <span class="product-tag">C++</span>
-                        <span class="product-tag">UE5</span>
-                    </div>
+                    <div class="product-tags"><span class="product-tag">C++</span><span class="product-tag">UE5</span></div>
                     <div class="product-price">$19.99</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <div class="product-header">
-                    <span class="product-badge soon" data-i18n="products.soon">Soon</span>
-                </div>
+                <div class="product-header"><span class="product-badge soon" data-i18n="products.soon">Soon</span></div>
                 <h3>Nova Health Bars</h3>
                 <p data-i18n="products.health.desc">Animated health bars with damage preview and segmentation.</p>
                 <div class="product-meta">
-                    <div class="product-tags">
-                        <span class="product-tag">C++</span>
-                        <span class="product-tag">UE5</span>
-                    </div>
+                    <div class="product-tags"><span class="product-tag">C++</span><span class="product-tag">UE5</span></div>
                     <div class="product-price">$14.99</div>
                 </div>
             </div>
@@ -804,29 +150,16 @@
             <div class="section-label" data-i18n="about.label">About</div>
             <h2 data-i18n="about.title">Remote studio, rooted in Sweden</h2>
         </div>
-
         <div class="about-content">
             <div class="about-text">
                 <p data-i18n="about.p1">Lone Lodge Studios is a remote-first studio with its heart in Västergötland, outside Gothenburg. We believe in health, balance, and that AI should enable creativity—not replace it.</p>
                 <p data-i18n="about.p2">Our experience spans MMOs, RPGs, casino, metaverse, and enterprise software. We work across C++, C#, Unreal, Unity, custom engines, UI/UX, gameplay systems, and ECS architecture.</p>
             </div>
             <div class="about-stats">
-                <div class="stat">
-                    <div class="stat-value">7+</div>
-                    <div class="stat-label" data-i18n="about.stat1">Years experience</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-value">100%</div>
-                    <div class="stat-label" data-i18n="about.stat2">Remote-first</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-value">6+</div>
-                    <div class="stat-label" data-i18n="about.stat3">Industries</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-value">SE</div>
-                    <div class="stat-label">Göteborg</div>
-                </div>
+                <div class="stat"><div class="stat-value">7+</div><div class="stat-label" data-i18n="about.stat1">Years experience</div></div>
+                <div class="stat"><div class="stat-value">100%</div><div class="stat-label" data-i18n="about.stat2">Remote-first</div></div>
+                <div class="stat"><div class="stat-value">6+</div><div class="stat-label" data-i18n="about.stat3">Industries</div></div>
+                <div class="stat"><div class="stat-value">SE</div><div class="stat-label">Göteborg</div></div>
             </div>
         </div>
     </section>
@@ -839,10 +172,7 @@
                 <p data-i18n="contact.subtitle">Interested in our products, licensing, or collaboration?</p>
             </div>
             <a data-email class="contact-email">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                    <polyline points="22,6 12,13 2,6"/>
-                </svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 <span>support@lonelodgestudios.com</span>
             </a>
         </div>
@@ -852,18 +182,10 @@
     <footer>
         <div class="footer-content">
             <div class="footer-socials">
-                <a data-link="twitter" target="_blank" rel="noopener" aria-label="Twitter">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                </a>
-                <a data-link="discord" target="_blank" rel="noopener" aria-label="Discord">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
-                </a>
-                <a data-link="youtube" target="_blank" rel="noopener" aria-label="YouTube">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                </a>
-                <a data-link="github" target="_blank" rel="noopener" aria-label="GitHub">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                </a>
+                <a data-link="twitter" target="_blank" rel="noopener" aria-label="Twitter"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                <a data-link="discord" target="_blank" rel="noopener" aria-label="Discord"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg></a>
+                <a data-link="youtube" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                <a data-link="github" target="_blank" rel="noopener" aria-label="GitHub"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
             </div>
             <div class="footer-links">
                 <a href="#work" data-i18n="nav.work">Work</a>
@@ -875,266 +197,8 @@
         </div>
     </footer>
 
-    <script>
-        // ============================================
-        // CONFIGURATION - Edit your links here!
-        // ============================================
-        const CONFIG = {
-            // Social Media
-            twitter: 'https://twitter.com/lonelodge',
-            discord: 'https://discord.gg/lonelodge',
-            youtube: 'https://youtube.com/@lonelodge',
-            github: 'https://github.com/Lone-Lodge',
-
-            // Store
-            fabStore: 'https://fab.com/sellers/Lone%20Lodge%20Studios',
-
-            // Contact
-            email: 'support@lonelodgestudios.com',
-
-            // Products (Fab links)
-            novaRadialMenu: 'https://fab.com',
-            novaToast: 'https://fab.com',
-            novaDamageNumbers: 'https://fab.com',
-            novaHealthBars: 'https://fab.com',
-        };
-        // ============================================
-
-        const translations = {
-            en: {
-                'nav.work': 'Work',
-                'nav.products': 'Products',
-                'nav.about': 'About',
-                'nav.contact': 'Contact',
-                'hero.title': 'We build tools and products.',
-                'hero.subtitle': 'Remote Swedish studio creating software, games, and developer tools. Small team, focused work.',
-                'hero.cta1': 'See our work',
-                'hero.cta2': 'Get in touch',
-                'work.label': 'What we do',
-                'work.title': 'From concept to shipped product',
-                'work.subtitle': 'We build what we believe in.',
-                'work.software.title': 'Software & Apps',
-                'work.software.desc': 'Standalone tools and applications. Currently building Quill, a focused writing tool for creators.',
-                'work.games.title': 'Game Development',
-                'work.games.desc': 'Games and interactive experiences built with Unreal Engine. From prototype to release.',
-                'work.plugins.title': 'Unreal Plugins',
-                'work.plugins.desc': 'Production-ready plugins for Unreal Engine. Nova UI ecosystem and more.',
-                'products.label': 'Products',
-                'products.subtitle': 'Professional UI systems for Unreal Engine. Zero dependencies, fully production-ready.',
-                'products.available': 'Available',
-                'products.soon': 'Soon',
-                'products.radial.desc': 'Shader-based radial menu with multi-page support and complete input flexibility.',
-                'products.toast.desc': 'Notification system with queuing, stacking, and customizable animations.',
-                'products.damage.desc': 'Performant floating combat text with pooling and screen-space positioning.',
-                'products.health.desc': 'Animated health bars with damage preview and segmentation.',
-                'about.label': 'About',
-                'about.title': 'Remote studio, rooted in Sweden',
-                'about.p1': 'Lone Lodge Studios is a remote-first studio with its heart in Västergötland, outside Gothenburg. We believe in health, balance, and that AI should enable creativity—not replace it.',
-                'about.p2': 'Our experience spans MMOs, RPGs, casino, metaverse, and enterprise software. We work across C++, C#, Unreal, Unity, custom engines, UI/UX, gameplay systems, and ECS architecture.',
-                'about.stat1': 'Years experience',
-                'about.stat2': 'Remote-first',
-                'about.stat3': 'Industries',
-                'contact.title': "Let's work together",
-                'contact.subtitle': 'Interested in our products, licensing, or collaboration?'
-            },
-            sv: {
-                'nav.work': 'Arbete',
-                'nav.products': 'Produkter',
-                'nav.about': 'Om oss',
-                'nav.contact': 'Kontakt',
-                'hero.title': 'Vi bygger verktyg och produkter.',
-                'hero.subtitle': 'Svensk remote-studio som skapar mjukvara, spel och utvecklarverktyg. Litet team, fokuserat arbete.',
-                'hero.cta1': 'Se vårt arbete',
-                'hero.cta2': 'Kontakta oss',
-                'work.label': 'Vad vi gör',
-                'work.title': 'Från koncept till färdig produkt',
-                'work.subtitle': 'Vi bygger det vi tror på.',
-                'work.software.title': 'Mjukvara & Appar',
-                'work.software.desc': 'Fristående verktyg och applikationer. Just nu bygger vi Quill, ett fokuserat skrivverktyg för kreatörer.',
-                'work.games.title': 'Spelutveckling',
-                'work.games.desc': 'Spel och interaktiva upplevelser byggda med Unreal Engine. Från prototyp till release.',
-                'work.plugins.title': 'Unreal Plugins',
-                'work.plugins.desc': 'Produktionsklara plugins för Unreal Engine. Nova UI-ekosystemet och mer.',
-                'products.label': 'Produkter',
-                'products.subtitle': 'Professionella UI-system för Unreal Engine. Inga beroenden, helt produktionsklara.',
-                'products.available': 'Tillgänglig',
-                'products.soon': 'Snart',
-                'products.radial.desc': 'Shader-baserad radialmeny med stöd för flera sidor och fullständig inputflexibilitet.',
-                'products.toast.desc': 'Notifikationssystem med köhantering, stapling och anpassningsbara animationer.',
-                'products.damage.desc': 'Prestandaoptimerad flytande stridstext med pooling och skärmpositionering.',
-                'products.health.desc': 'Animerade hälsomätare med skadeförhandsgranskning och segmentering.',
-                'about.label': 'Om oss',
-                'about.title': 'Remote-studio med rötter i Sverige',
-                'about.p1': 'Lone Lodge Studios är en remote-first studio med hjärtat i Västergötland, utanför Göteborg. Vi tror på hälsa, balans och att AI ska möjliggöra kreativitet—inte ersätta den.',
-                'about.p2': 'Vår erfarenhet spänner över MMO, RPG, casino, metaverse och företagsmjukvara. Vi jobbar med C++, C#, Unreal, Unity, egna motorer, UI/UX, gameplay-system och ECS-arkitektur.',
-                'about.stat1': 'Års erfarenhet',
-                'about.stat2': 'Remote-first',
-                'about.stat3': 'Branscher',
-                'contact.title': 'Låt oss samarbeta',
-                'contact.subtitle': 'Intresserad av våra produkter, licensiering eller samarbete?'
-            },
-            de: {
-                'nav.work': 'Arbeit',
-                'nav.products': 'Produkte',
-                'nav.about': 'Über uns',
-                'nav.contact': 'Kontakt',
-                'hero.title': 'Wir bauen Tools und Produkte.',
-                'hero.subtitle': 'Schwedisches Remote-Studio für Software, Spiele und Entwicklertools. Kleines Team, fokussierte Arbeit.',
-                'hero.cta1': 'Unsere Arbeit',
-                'hero.cta2': 'Kontakt aufnehmen',
-                'work.label': 'Was wir machen',
-                'work.title': 'Vom Konzept zum fertigen Produkt',
-                'work.subtitle': 'Wir bauen, woran wir glauben.',
-                'work.software.title': 'Software & Apps',
-                'work.software.desc': 'Eigenständige Tools und Anwendungen. Aktuell entwickeln wir Quill, ein fokussiertes Schreibtool für Kreative.',
-                'work.games.title': 'Spieleentwicklung',
-                'work.games.desc': 'Spiele und interaktive Erlebnisse mit Unreal Engine. Vom Prototyp bis zur Veröffentlichung.',
-                'work.plugins.title': 'Unreal Plugins',
-                'work.plugins.desc': 'Produktionsreife Plugins für Unreal Engine. Nova UI Ökosystem und mehr.',
-                'products.label': 'Produkte',
-                'products.subtitle': 'Professionelle UI-Systeme für Unreal Engine. Keine Abhängigkeiten, vollständig produktionsreif.',
-                'products.available': 'Verfügbar',
-                'products.soon': 'Bald',
-                'products.radial.desc': 'Shader-basiertes Radialmenü mit Multi-Page-Unterstützung und vollständiger Input-Flexibilität.',
-                'products.toast.desc': 'Benachrichtigungssystem mit Warteschlange, Stapelung und anpassbaren Animationen.',
-                'products.damage.desc': 'Performanter schwebender Kampftext mit Pooling und Bildschirmpositionierung.',
-                'products.health.desc': 'Animierte Gesundheitsbalken mit Schadensvorschau und Segmentierung.',
-                'about.label': 'Über uns',
-                'about.title': 'Remote-Studio mit schwedischen Wurzeln',
-                'about.p1': 'Lone Lodge Studios ist ein Remote-first Studio mit Herz in Västergötland bei Göteborg. Wir glauben an Gesundheit, Balance und dass KI Kreativität ermöglichen sollte—nicht ersetzen.',
-                'about.p2': 'Unsere Erfahrung umfasst MMOs, RPGs, Casino, Metaverse und Unternehmenssoftware. Wir arbeiten mit C++, C#, Unreal, Unity, eigenen Engines, UI/UX, Gameplay-Systemen und ECS-Architektur.',
-                'about.stat1': 'Jahre Erfahrung',
-                'about.stat2': 'Remote-first',
-                'about.stat3': 'Branchen',
-                'contact.title': 'Lass uns zusammenarbeiten',
-                'contact.subtitle': 'Interesse an unseren Produkten, Lizenzierung oder Zusammenarbeit?'
-            },
-            es: {
-                'nav.work': 'Trabajo',
-                'nav.products': 'Productos',
-                'nav.about': 'Nosotros',
-                'nav.contact': 'Contacto',
-                'hero.title': 'Construimos herramientas y productos.',
-                'hero.subtitle': 'Estudio sueco remoto que crea software, juegos y herramientas para desarrolladores. Equipo pequeño, trabajo enfocado.',
-                'hero.cta1': 'Ver nuestro trabajo',
-                'hero.cta2': 'Contáctanos',
-                'work.label': 'Qué hacemos',
-                'work.title': 'Del concepto al producto final',
-                'work.subtitle': 'Construimos lo que creemos.',
-                'work.software.title': 'Software y Apps',
-                'work.software.desc': 'Herramientas y aplicaciones independientes. Actualmente desarrollando Quill, una herramienta de escritura enfocada para creadores.',
-                'work.games.title': 'Desarrollo de Juegos',
-                'work.games.desc': 'Juegos y experiencias interactivas construidas con Unreal Engine. Del prototipo al lanzamiento.',
-                'work.plugins.title': 'Plugins de Unreal',
-                'work.plugins.desc': 'Plugins listos para producción para Unreal Engine. Ecosistema Nova UI y más.',
-                'products.label': 'Productos',
-                'products.subtitle': 'Sistemas UI profesionales para Unreal Engine. Sin dependencias, completamente listos para producción.',
-                'products.available': 'Disponible',
-                'products.soon': 'Pronto',
-                'products.radial.desc': 'Menú radial basado en shaders con soporte multi-página y flexibilidad total de entrada.',
-                'products.toast.desc': 'Sistema de notificaciones con cola, apilamiento y animaciones personalizables.',
-                'products.damage.desc': 'Texto de combate flotante de alto rendimiento con pooling y posicionamiento en pantalla.',
-                'products.health.desc': 'Barras de salud animadas con vista previa de daño y segmentación.',
-                'about.label': 'Nosotros',
-                'about.title': 'Estudio remoto con raíces suecas',
-                'about.p1': 'Lone Lodge Studios es un estudio remote-first con corazón en Västergötland, cerca de Gotemburgo. Creemos en la salud, el equilibrio y que la IA debe permitir la creatividad—no reemplazarla.',
-                'about.p2': 'Nuestra experiencia abarca MMOs, RPGs, casino, metaverso y software empresarial. Trabajamos con C++, C#, Unreal, Unity, motores propios, UI/UX, sistemas de gameplay y arquitectura ECS.',
-                'about.stat1': 'Años de experiencia',
-                'about.stat2': 'Remote-first',
-                'about.stat3': 'Industrias',
-                'contact.title': 'Trabajemos juntos',
-                'contact.subtitle': '¿Interesado en nuestros productos, licencias o colaboración?'
-            },
-            pl: {
-                'nav.work': 'Praca',
-                'nav.products': 'Produkty',
-                'nav.about': 'O nas',
-                'nav.contact': 'Kontakt',
-                'hero.title': 'Tworzymy narzędzia i produkty.',
-                'hero.subtitle': 'Szwedzkie zdalne studio tworzące oprogramowanie, gry i narzędzia deweloperskie. Mały zespół, skupiona praca.',
-                'hero.cta1': 'Zobacz naszą pracę',
-                'hero.cta2': 'Skontaktuj się',
-                'work.label': 'Co robimy',
-                'work.title': 'Od koncepcji do gotowego produktu',
-                'work.subtitle': 'Tworzymy to, w co wierzymy.',
-                'work.software.title': 'Oprogramowanie i Aplikacje',
-                'work.software.desc': 'Samodzielne narzędzia i aplikacje. Obecnie tworzymy Quill, skupione narzędzie do pisania dla twórców.',
-                'work.games.title': 'Tworzenie Gier',
-                'work.games.desc': 'Gry i interaktywne doświadczenia zbudowane z Unreal Engine. Od prototypu do wydania.',
-                'work.plugins.title': 'Pluginy Unreal',
-                'work.plugins.desc': 'Gotowe do produkcji pluginy dla Unreal Engine. Ekosystem Nova UI i więcej.',
-                'products.label': 'Produkty',
-                'products.subtitle': 'Profesjonalne systemy UI dla Unreal Engine. Zero zależności, w pełni gotowe do produkcji.',
-                'products.available': 'Dostępne',
-                'products.soon': 'Wkrótce',
-                'products.radial.desc': 'Menu radialne oparte na shaderach z obsługą wielu stron i pełną elastycznością wejścia.',
-                'products.toast.desc': 'System powiadomień z kolejkowaniem, układaniem w stos i dostosowywalnymi animacjami.',
-                'products.damage.desc': 'Wydajny pływający tekst bojowy z poolingiem i pozycjonowaniem na ekranie.',
-                'products.health.desc': 'Animowane paski zdrowia z podglądem obrażeń i segmentacją.',
-                'about.label': 'O nas',
-                'about.title': 'Zdalne studio zakorzenione w Szwecji',
-                'about.p1': 'Lone Lodge Studios to studio remote-first z sercem w Västergötland, niedaleko Göteborga. Wierzymy w zdrowie, równowagę i że AI powinna umożliwiać kreatywność—nie zastępować jej.',
-                'about.p2': 'Nasze doświadczenie obejmuje MMO, RPG, kasyno, metaverse i oprogramowanie biznesowe. Pracujemy z C++, C#, Unreal, Unity, własnymi silnikami, UI/UX, systemami gameplay i architekturą ECS.',
-                'about.stat1': 'Lat doświadczenia',
-                'about.stat2': 'Remote-first',
-                'about.stat3': 'Branże',
-                'contact.title': 'Pracujmy razem',
-                'contact.subtitle': 'Zainteresowany naszymi produktami, licencjonowaniem lub współpracą?'
-            }
-        };
-
-        const langNames = { en: 'EN', sv: 'SV', de: 'DE', es: 'ES', pl: 'PL' };
-
-        function setLanguage(lang) {
-            const t = translations[lang];
-            if (!t) return;
-
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (t[key]) el.textContent = t[key];
-            });
-
-            document.getElementById('current-lang').textContent = langNames[lang];
-            document.documentElement.lang = lang;
-
-            document.querySelectorAll('.lang-option').forEach(btn => {
-                btn.classList.toggle('active', btn.textContent.toLowerCase().includes(lang === 'en' ? 'english' : lang === 'sv' ? 'svenska' : lang === 'de' ? 'deutsch' : lang === 'es' ? 'español' : 'polski'));
-            });
-
-            localStorage.setItem('lang', lang);
-            closeLangDropdown();
-        }
-
-        function toggleLangDropdown() {
-            document.querySelector('.lang-selector').classList.toggle('open');
-        }
-
-        function closeLangDropdown() {
-            document.querySelector('.lang-selector').classList.remove('open');
-        }
-
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.lang-selector')) closeLangDropdown();
-        });
-
-        // Load saved language or detect from browser
-        const savedLang = localStorage.getItem('lang');
-        const browserLang = navigator.language.slice(0, 2);
-        const supportedLangs = ['en', 'sv', 'de', 'es', 'pl'];
-        const initialLang = savedLang || (supportedLangs.includes(browserLang) ? browserLang : 'en');
-        setLanguage(initialLang);
-
-        // Apply CONFIG links
-        document.querySelectorAll('[data-link]').forEach(el => {
-            const key = el.getAttribute('data-link');
-            if (CONFIG[key]) el.href = CONFIG[key];
-        });
-
-        // Apply email
-        document.querySelectorAll('[data-email]').forEach(el => {
-            el.href = 'mailto:' + CONFIG.email;
-            if (el.querySelector('span')) el.querySelector('span').textContent = CONFIG.email;
-        });
-    </script>
+    <script src="config.js"></script>
+    <script src="translations.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
