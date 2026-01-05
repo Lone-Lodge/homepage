@@ -68,6 +68,20 @@ function renderProducts() {
     `).join('');
 }
 
+// Scroll animations with Intersection Observer
+function initScrollAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+}
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     // Close dropdown when clicking outside
@@ -97,4 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const span = el.querySelector('span');
         if (span) span.textContent = CONFIG.email;
     });
+
+    // Init scroll animations
+    initScrollAnimations();
 });
