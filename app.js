@@ -97,7 +97,7 @@ function buildHero() {
   const words = CONTENT.hero.headline.replace(/\.$/, '').split(' ');
   el.innerHTML = words.map((w, i) =>
     `<span class="word" style="transition-delay:${0.3 + i * 0.06}s">${w}</span>`
-  ).join('') + `<span class="dot" style="transition-delay:${0.3 + words.length * 0.06}s">.</span>`;
+  ).join('') + `<span class="dot" style="transition-delay:${0.3 + words.length * 0.06}s;margin-left:-0.1em">.</span>`;
 }
 
 function buildManifesto() {

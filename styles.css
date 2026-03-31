@@ -190,12 +190,15 @@ nav.scrolled {
   max-width: 960px; width: 100%; margin: 0 auto;
   position: relative; z-index: 1;
   padding-top: 64px; padding-bottom: 6rem;
-  display: grid; grid-template-columns: 1fr auto;
-  gap: 2rem; align-items: center;
+  display: flex; flex-direction: row;
+  align-items: center; gap: 4rem;
+}
+
+.hero-text {
+  flex: 1; min-width: 0;
 }
 
 .hero-eyebrow {
-  grid-column: 1;
   display: flex; align-items: center; gap: 0.625rem;
   font-size: 0.75rem; color: var(--muted);
   letter-spacing: 0.05em; margin-bottom: 1.25rem;
@@ -207,7 +210,6 @@ nav.scrolled {
 }
 
 #hero-headline {
-  grid-column: 1;
   font-size: clamp(3rem, 6.5vw, 5rem);
   font-weight: 400; letter-spacing: -0.03em; line-height: 1.1;
   margin-bottom: 1.25rem;
@@ -223,14 +225,12 @@ nav.scrolled {
 #hero-headline .dot.visible { opacity: 1; }
 
 .hero-subline {
-  grid-column: 1;
   font-size: 1.0625rem; color: var(--muted);
   max-width: 500px; line-height: 1.7;
   margin-bottom: 2rem; min-height: 1.7em;
 }
 
 .hero-ctas {
-  grid-column: 1;
   display: flex; gap: 0.75rem; flex-wrap: wrap;
   opacity: 0; animation: fadeUp 0.5s 1.8s ease forwards;
 }
@@ -254,7 +254,6 @@ nav.scrolled {
 .btn-ghost:hover { color: var(--fg); border-color: color-mix(in srgb, var(--fg) 30%, transparent); }
 
 .hero-scroll {
-  grid-column: 1;
   display: flex; flex-direction: column; align-items: flex-start;
   gap: 0.625rem; margin-top: 3rem;
   opacity: 0; transition: opacity 1s;
@@ -282,8 +281,7 @@ nav.scrolled {
 
 /* Illustration */
 .hero-illo {
-  grid-column: 2; grid-row: 1 / 6;
-  width: 260px; flex-shrink: 0;
+  width: 280px; flex-shrink: 0;
   opacity: 0; transform: translateY(20px);
   animation: fadeUp 0.8s 0.6s ease forwards;
   align-self: center;
@@ -319,8 +317,8 @@ nav.scrolled {
 }
 .manifesto-inner {
   max-width: 960px; margin: 0 auto;
-  display: flex; align-items: center; gap: 1.25rem;
-  flex-wrap: wrap; justify-content: center;
+  display: flex; align-items: center; gap: 1rem;
+  flex-wrap: nowrap; justify-content: center; overflow: hidden;
 }
 .manifesto-inner span {
   font-size: 0.7rem; font-weight: 500;
@@ -412,7 +410,7 @@ nav.scrolled {
 /* Culture / team cards */
 .culture-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1px; background: var(--border);
   border: 1px solid var(--border); border-radius: 10px;
   overflow: hidden; margin-bottom: 3rem;
@@ -607,6 +605,8 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .manifesto-inner { gap: 0.625rem; }
+  .manifesto-inner span { font-size: 0.6rem; }
   .nav-links { display: none; }
   #mobile-menu-btn { display: flex; }
   .nav-underline { display: none; }
@@ -616,7 +616,7 @@ footer {
   .about-paragraphs { font-size: 1.05rem; }
   .footer-inner { grid-template-columns: 1fr; }
   .footer-cols { flex-wrap: wrap; gap: 2rem; }
-  .culture-grid { grid-template-columns: 1fr 1fr; }
+  .culture-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 480px) {
