@@ -12,15 +12,20 @@
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Lora:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="noise-overlay">
 
   <div id="scroll-progress"></div>
 
+  <!-- Nav -->
   <nav id="nav" aria-label="Main navigation">
     <div class="nav-inner">
+      <a class="nav-logo" href="#home" onclick="scrollToSection('home'); return false;">
+        <img src="logo.png" alt="" class="nav-logo-img" aria-hidden="true">
+        <span class="nav-logo-text">Lone Lodge Studios</span>
+      </a>
       <div class="nav-links" id="nav-links">
         <button class="nav-btn active" data-section="home">Home</button>
         <button class="nav-btn" data-section="work">Storyteller</button>
@@ -30,8 +35,8 @@
       </div>
       <div class="nav-right">
         <button id="theme-toggle" aria-label="Toggle theme">
-          <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-          <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
         <button id="mobile-menu-btn" aria-label="Open menu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -43,6 +48,7 @@
     </div>
   </nav>
 
+  <!-- Mobile menu -->
   <div id="mobile-menu">
     <button id="mobile-close" aria-label="Close menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -51,18 +57,71 @@
   </div>
 
   <main>
+
+    <!-- ── Hero ── -->
     <section id="home" class="hero-section">
       <div id="hero-glow" class="hero-glow"></div>
       <div class="hero-content">
+        <div class="hero-eyebrow" id="hero-eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span>Indie studio · Göteborg, Sweden</span>
+        </div>
         <h1 id="hero-headline" aria-label="We build what we believe in."></h1>
         <p id="hero-subline" class="hero-subline"></p>
+        <div class="hero-ctas" id="hero-ctas">
+          <button class="btn-primary" onclick="scrollToSection('work')">Discover Storyteller</button>
+          <button class="btn-ghost" onclick="scrollToSection('contact')">Get in touch</button>
+        </div>
         <div class="hero-scroll" id="hero-scroll">
           <span class="scroll-label">scroll</span>
           <div class="scroll-line-wrap"><div class="scroll-line"></div></div>
         </div>
       </div>
+      <!-- Decorative illustration -->
+      <div class="hero-illo" id="hero-illo" aria-hidden="true">
+        <svg viewBox="0 0 320 420" fill="none" xmlns="http://www.w3.org/2000/svg" class="lodge-svg">
+          <!-- Book / lodge shape -->
+          <rect x="60" y="80" width="200" height="260" rx="4" class="book-bg"/>
+          <rect x="60" y="80" width="200" height="260" rx="4" class="book-border"/>
+          <!-- Spine -->
+          <rect x="152" y="80" width="16" height="260" class="book-spine"/>
+          <!-- Left page lines -->
+          <line x1="84" y1="130" x2="144" y2="130" class="page-line"/>
+          <line x1="84" y1="148" x2="144" y2="148" class="page-line"/>
+          <line x1="84" y1="166" x2="130" y2="166" class="page-line"/>
+          <line x1="84" y1="200" x2="144" y2="200" class="page-line"/>
+          <line x1="84" y1="218" x2="144" y2="218" class="page-line"/>
+          <line x1="84" y1="236" x2="120" y2="236" class="page-line"/>
+          <!-- Choice buttons on left -->
+          <rect x="84" y="268" width="60" height="20" rx="3" class="choice-box"/>
+          <rect x="84" y="296" width="50" height="20" rx="3" class="choice-box choice-dim"/>
+          <!-- Right page — card hand -->
+          <rect x="175" y="120" width="62" height="88" rx="6" class="card-bg card-1"/>
+          <rect x="175" y="120" width="62" height="88" rx="6" class="card-border"/>
+          <line x1="185" y1="140" x2="227" y2="140" class="card-line"/>
+          <line x1="185" y1="152" x2="215" y2="152" class="card-line"/>
+          <rect x="183" y="178" width="46" height="16" rx="3" class="card-tag"/>
+
+          <rect x="183" y="222" width="62" height="88" rx="6" class="card-bg card-2"/>
+          <rect x="183" y="222" width="62" height="88" rx="6" class="card-border card-border-dim"/>
+          <line x1="193" y1="242" x2="235" y2="242" class="card-line card-line-dim"/>
+          <line x1="193" y1="254" x2="223" y2="254" class="card-line card-line-dim"/>
+
+          <!-- Run indicator -->
+          <text x="175" y="338" class="run-text">Run 7 · 2 cards left</text>
+          <!-- Decorative corner ornament -->
+          <path d="M60 100 L80 80" class="ornament"/>
+          <path d="M240 100 L260 80" class="ornament"/>
+        </svg>
+      </div>
     </section>
 
+    <!-- ── Manifesto strip ── -->
+    <div class="manifesto-strip" aria-hidden="true">
+      <div class="manifesto-inner" id="manifesto-inner"></div>
+    </div>
+
+    <!-- ── Storyteller ── -->
     <section id="work" class="section">
       <div class="section-inner">
         <h2 class="section-label anim-x">STORYTELLER</h2>
@@ -70,10 +129,15 @@
       </div>
     </section>
 
+    <!-- ── About / Team & Culture ── -->
     <section id="about" class="section">
       <div class="section-inner">
         <h2 class="section-label anim-x">ABOUT</h2>
         <div id="about-paragraphs" class="about-paragraphs"></div>
+
+        <!-- Team & culture cards -->
+        <div class="culture-grid" id="culture-grid"></div>
+
         <div class="about-footer anim-fade">
           <p class="about-personal" id="about-personal"></p>
           <div class="interests" id="interests"></div>
@@ -81,6 +145,7 @@
       </div>
     </section>
 
+    <!-- ── Open ── -->
     <section id="open" class="section open-bg">
       <div class="section-inner">
         <h2 class="section-label anim-x">OPEN BY DEFAULT</h2>
@@ -88,17 +153,56 @@
       </div>
     </section>
 
+    <!-- ── Contact ── -->
     <section id="contact" class="section contact-section">
       <div class="section-inner">
         <h2 class="section-label anim-x">GET IN TOUCH</h2>
         <h3 class="contact-headline anim-up">The door is always open.</h3>
         <div id="contact-links" class="contact-links"></div>
         <div class="contact-footer anim-fade">
-          <p>Lone Lodge Studios · Göteborg, Sweden · Remote-first</p>
+          <p>Lone Lodge Studios · Göteborg, Sweden · Remote-first · Independent</p>
         </div>
       </div>
     </section>
+
   </main>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <a href="#home" class="footer-logo-wrap" onclick="scrollToSection('home'); return false;">
+          <img src="logo.png" alt="Lone Lodge Studios" class="footer-logo-img">
+          <span class="footer-logo-text">Lone Lodge Studios</span>
+        </a>
+        <p class="footer-tagline">A lone lodge on the internet.</p>
+        <p class="footer-copy">© 2025 Lone Lodge Studios · Göteborg, Sweden</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <div class="footer-col-label">Studio</div>
+          <button onclick="scrollToSection('about')">About</button>
+          <button onclick="scrollToSection('open')">Open</button>
+          <button onclick="scrollToSection('contact')">Contact</button>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-label">Product</div>
+          <button onclick="scrollToSection('work')">Storyteller</button>
+          <a data-link="fabStore" target="_blank" rel="noopener">Fab Store</a>
+          <a data-link="github" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-label">Community</div>
+          <a data-link="discord" target="_blank" rel="noopener">Discord</a>
+          <a data-link="twitter" target="_blank" rel="noopener">Twitter / X</a>
+          <a data-link="youtube" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Built openly · Health first · Craft over speed · Independent always</p>
+    </div>
+  </footer>
 
   <button id="back-to-top" aria-label="Back to top">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="18 15 12 9 6 15"/></svg>
