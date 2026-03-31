@@ -29,6 +29,16 @@
   --amber-dim: rgba(200,146,42,0.1);
 }
 
+
+/* Logo images — hard size lock */
+img.nav-logo-img, img.footer-logo-img {
+  display: block !important;
+  width: 28px !important; height: 28px !important;
+  max-width: 28px !important; max-height: 28px !important;
+  object-fit: contain !important;
+  flex-shrink: 0 !important;
+}
+
 html { scroll-behavior: smooth; }
 
 body {
@@ -89,8 +99,9 @@ nav.scrolled {
   text-decoration: none; color: var(--fg); flex-shrink: 0;
 }
 .nav-logo-img {
-  width: 28px; height: 28px;
-  border-radius: 6px; object-fit: contain;
+  width: 28px !important; height: 28px !important;
+  max-width: 28px !important; min-width: 28px !important;
+  border-radius: 6px; object-fit: contain; flex-shrink: 0;
 }
 .nav-logo-text {
   font-size: 0.9rem; font-weight: 500;
@@ -522,7 +533,7 @@ footer {
   display: flex; align-items: center; gap: 0.625rem;
   text-decoration: none; color: var(--fg); margin-bottom: 0.875rem;
 }
-.footer-logo-img { width: 26px; height: 26px; border-radius: 5px; object-fit: contain; }
+.footer-logo-img { width: 26px !important; height: 26px !important; max-width: 26px !important; border-radius: 5px; object-fit: contain; flex-shrink: 0; }
 .footer-logo-text { font-size: 0.9rem; font-weight: 500; letter-spacing: -0.01em; }
 
 .footer-tagline {
