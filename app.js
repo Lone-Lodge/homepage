@@ -95,9 +95,12 @@ const ICONS = {
 function buildHero() {
   const el = document.getElementById('hero-headline');
   const words = CONTENT.hero.headline.replace(/\.$/, '').split(' ');
-  el.innerHTML = words.map((w, i) =>
+  // Join last word + dot to prevent line break between them
+  const lastDelay = 0.3 + (words.length - 1) * 0.06;
+  el.innerHTML = words.slice(0, -1).map((w, i) =>
     `<span class="word" style="transition-delay:${0.3 + i * 0.06}s">${w}</span>`
-  ).join('') + `<span class="dot" style="transition-delay:${0.3 + words.length * 0.06}s;margin-left:-0.1em">.</span>`;
+  ).join('') + 
+  `<span class="word word-last" style="transition-delay:${lastDelay}s">${words[words.length-1]}<span class="dot" style="transition-delay:${0.3 + words.length * 0.06}s">.</span></span>`;
 }
 
 function buildManifesto() {
@@ -363,16 +366,20 @@ function revealHero() {
   words.forEach((w, i) => setTimeout(() => w.classList.add('visible'), 300 + i * 60));
 
   const dotAt = 300 + words.length * 60;
-  setTimeout(() => dot.classList.add('visible'), dotAt);
+  const dotEl = document.querySelector('#hero-headline .dot');
+  if (dotEl) setTimeout(() => dotEl.classList.add('visible'), dotAt);
 
   let i = 0;
+  const twDelay = dotAt + 300;
   setTimeout(() => {
     const iv = setInterval(() => {
       subline.textContent = text.slice(0, ++i);
-      if (i >= text.length) clearInterval(iv);
-    }, 32);
-    setTimeout(() => scroll.classList.add('visible'), text.length * 32 + 1500);
-  }, dotAt + 180);
+      if (i >= text.length) {
+        clearInterval(iv);
+        setTimeout(() => scroll.classList.add('visible'), 1500);
+      }
+    }, 38);
+  }, twDelay);
 }
 
 // ── Init ───────────────────────────────────────────────────────────────────
