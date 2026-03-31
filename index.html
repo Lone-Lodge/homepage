@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Lone Lodge Studios - Swedish product studio. We build software, tools, and games.">
-    <meta name="keywords" content="Software, Tools, Game Development, Unreal Engine, Indie Studio, Sweden">
+    <meta name="description" content="Lone Lodge Studios — an independent craft studio building narrative games and tools with passion, openness, and community at the centre.">
+    <meta name="keywords" content="Storyteller, narrative game, roguelike, indie studio, Sweden, game development, creator tools">
     <meta name="author" content="Lone Lodge Studios">
     <meta property="og:title" content="Lone Lodge Studios">
-    <meta property="og:description" content="Swedish product studio">
+    <meta property="og:description" content="A small lodge on the internet. We build what we believe in.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://lonelodgestudios.com">
 
@@ -17,12 +17,13 @@
     <link rel="apple-touch-icon" href="logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <!-- Navigation -->
-    <nav>
+    <nav id="nav">
         <div class="nav-content">
             <a href="#" class="logo">
                 <img src="logo.png" alt="Lone Lodge Studios" class="logo-icon">
@@ -30,22 +31,19 @@
             </a>
             <div class="nav-right">
                 <div class="nav-links">
-                    <a href="#work" data-i18n="nav.work">Work</a>
-                    <a href="#products" data-i18n="nav.products">Products</a>
-                    <a href="#about" data-i18n="nav.about">About</a>
-                    <a href="#contact" data-i18n="nav.contact">Contact</a>
+                    <a href="#storyteller">Storyteller</a>
+                    <a href="#about">About</a>
+                    <a href="#open">Open</a>
+                    <a href="#contact">Contact</a>
                 </div>
                 <div class="lang-selector">
                     <button class="lang-btn" onclick="toggleLangDropdown()">
                         <span id="current-lang">EN</span>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
                     </button>
                     <div class="lang-dropdown">
                         <button class="lang-option active" onclick="setLanguage('en')">English</button>
                         <button class="lang-option" onclick="setLanguage('sv')">Svenska</button>
-                        <button class="lang-option" onclick="setLanguage('de')">Deutsch</button>
-                        <button class="lang-option" onclick="setLanguage('es')">Español</button>
-                        <button class="lang-option" onclick="setLanguage('pl')">Polski</button>
                     </div>
                 </div>
             </div>
@@ -53,112 +51,301 @@
     </nav>
 
     <!-- Hero -->
-    <div class="hero-wrapper">
-        <section class="hero">
-            <h1 data-i18n="hero.title">We build tools and products.</h1>
-            <p data-i18n="hero.subtitle">Remote Swedish studio creating software, games, and developer tools. Small team, focused work.</p>
-            <div class="hero-buttons">
-                <a href="#work" class="btn btn-primary" data-i18n="hero.cta1">See our work</a>
-                <a href="#contact" class="btn btn-secondary" data-i18n="hero.cta2">Get in touch</a>
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-label" data-i18n="hero.label">A small lodge on the internet</div>
+            <h1 data-i18n="hero.title">We build what<br><em>we believe in.</em></h1>
+            <p data-i18n="hero.subtitle">Lone Lodge Studios — an independent craft studio creating narrative games, systems and tools. Passionate, open, and here for the long run.</p>
+            <div class="hero-ctas">
+                <a href="#storyteller" class="btn btn-primary" data-i18n="hero.cta1">Discover Storyteller</a>
+                <a href="#about" class="btn btn-ghost" data-i18n="hero.cta2">Who we are</a>
             </div>
-        </section>
-        <img src="hero-bg.png" alt="" class="hero-image">
-    </div>
-
-    <!-- What we do -->
-    <section id="work" class="section">
-        <div class="section-header fade-in">
-            <div class="section-label" data-i18n="work.label">What we do</div>
-            <h2 data-i18n="work.title">From concept to shipped product</h2>
-            <p data-i18n="work.subtitle">We build what we believe in.</p>
         </div>
-        <div class="services-grid fade-in">
-            <div class="service-card">
-                <div class="service-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
-                </div>
-                <h3 data-i18n="work.software.title">Software & Apps</h3>
-                <p data-i18n="work.software.desc">Standalone tools and applications. Currently building Quill, a focused writing tool for creators.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-                </div>
-                <h3 data-i18n="work.games.title">Game Development</h3>
-                <p data-i18n="work.games.desc">Games and interactive experiences built with Unreal Engine. From prototype to release.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                </div>
-                <h3 data-i18n="work.plugins.title">Unreal Plugins</h3>
-                <p data-i18n="work.plugins.desc">Production-ready plugins for Unreal Engine. Nova UI ecosystem and more.</p>
-            </div>
+        <div class="hero-bg">
+            <img src="hero-bg.png" alt="" class="hero-img">
+            <div class="hero-grain"></div>
         </div>
     </section>
 
-    <!-- Products -->
-    <section id="products" class="section products-section">
-        <div class="section-header fade-in">
-            <div class="section-label" data-i18n="products.label">Products</div>
-            <h2>Nova UI Ecosystem</h2>
-            <p data-i18n="products.subtitle">Professional UI systems for Unreal Engine. Zero dependencies, fully production-ready.</p>
+    <!-- Manifesto strip -->
+    <div class="manifesto-strip">
+        <div class="manifesto-inner">
+            <span data-i18n="manifesto.1">Craft over speed</span>
+            <span class="dot">·</span>
+            <span data-i18n="manifesto.2">People before deadlines</span>
+            <span class="dot">·</span>
+            <span data-i18n="manifesto.3">Open by default</span>
+            <span class="dot">·</span>
+            <span data-i18n="manifesto.4">Community as co-builders</span>
+            <span class="dot">·</span>
+            <span data-i18n="manifesto.5">Independent always</span>
         </div>
-        <div id="products-grid" class="products-grid fade-in">
-            <!-- Products are rendered dynamically from config.js -->
+    </div>
+
+    <!-- Storyteller -->
+    <section id="storyteller" class="section storyteller-section">
+        <div class="storyteller-inner">
+            <div class="storyteller-text fade-in">
+                <div class="section-label" data-i18n="storyteller.label">Main product</div>
+                <h2 data-i18n="storyteller.title">Storyteller</h2>
+                <p class="storyteller-tagline" data-i18n="storyteller.tagline"><em>Every choice leaves a mark. Every card you play is a promise you can't take back.</em></p>
+                <p data-i18n="storyteller.desc">A narrative roguelike where story and system are one. Explore branching tales through an interactive book structure — your choices, your cards, your consequences. No two runs are ever the same.</p>
+
+                <div class="storyteller-pillars">
+                    <div class="pillar">
+                        <div class="pillar-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                        </div>
+                        <div>
+                            <h4 data-i18n="storyteller.pillar1.title">Narrative first</h4>
+                            <p data-i18n="storyteller.pillar1.desc">A book-like structure where every node is a moment that matters.</p>
+                        </div>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 15s1-1 5-1 5 1 5 1M9 9h.01M15 9h.01"/></svg>
+                        </div>
+                        <div>
+                            <h4 data-i18n="storyteller.pillar2.title">Cards as resources</h4>
+                            <p data-i18n="storyteller.pillar2.desc">Limited cards at critical moments — strategy, risk, consequence.</p>
+                        </div>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                        </div>
+                        <div>
+                            <h4 data-i18n="storyteller.pillar3.title">Roguelike loop</h4>
+                            <p data-i18n="storyteller.pillar3.desc">Every run unique. Meta-progression that rewards exploration.</p>
+                        </div>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <div>
+                            <h4 data-i18n="storyteller.pillar4.title">Built with creators</h4>
+                            <p data-i18n="storyteller.pillar4.desc">UGC tools, community stories, an open ecosystem.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="classes-row">
+                    <span class="class-badge" data-i18n="class.blood">Blood Mage</span>
+                    <span class="class-badge" data-i18n="class.rogue">Rogue</span>
+                    <span class="class-badge" data-i18n="class.necro">Necromancer</span>
+                    <span class="class-badge" data-i18n="class.oracle">Oracle</span>
+                    <span class="class-badge more">+ more</span>
+                </div>
+
+                <a href="#contact" class="btn btn-primary" data-i18n="storyteller.cta">Follow development</a>
+            </div>
+
+            <div class="storyteller-visual fade-in">
+                <div class="book-frame">
+                    <div class="book-page left-page">
+                        <div class="page-ornament"></div>
+                        <div class="page-chapter" data-i18n="book.chapter">Chapter IV</div>
+                        <div class="page-title" data-i18n="book.title">The Crossroads</div>
+                        <div class="page-text" data-i18n="book.text">The path splits before you. To the left, the smell of smoke and iron. To the right, silence — and something watching from the dark.</div>
+                        <div class="page-choices">
+                            <div class="choice" data-i18n="book.choice1">Walk toward the fire</div>
+                            <div class="choice" data-i18n="book.choice2">Step into the silence</div>
+                            <div class="choice choice-locked" data-i18n="book.choice3">Use a card</div>
+                        </div>
+                    </div>
+                    <div class="book-spine"></div>
+                    <div class="book-page right-page">
+                        <div class="cards-label" data-i18n="book.cards">Your hand</div>
+                        <div class="card-item card-1">
+                            <div class="card-name" data-i18n="card.blood">Blood Sight</div>
+                            <div class="card-type" data-i18n="card.type1">Reveal hidden path</div>
+                        </div>
+                        <div class="card-item card-2">
+                            <div class="card-name" data-i18n="card.shadow">Shadow Step</div>
+                            <div class="card-type" data-i18n="card.type2">Pass unseen</div>
+                        </div>
+                        <div class="card-item card-3 faded">
+                            <div class="card-name" data-i18n="card.void">Void Whisper</div>
+                            <div class="card-type" data-i18n="card.type3">Spent</div>
+                        </div>
+                        <div class="run-info">
+                            <div class="run-stat"><span data-i18n="run.run">Run</span> 7</div>
+                            <div class="run-stat"><span data-i18n="run.cards">Cards left</span>: 2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- About -->
     <section id="about" class="section about-section">
-        <div class="section-header fade-in">
-            <div class="section-label" data-i18n="about.label">About</div>
-            <h2 data-i18n="about.title">Remote studio, rooted in Sweden</h2>
-        </div>
-        <div class="about-content fade-in">
-            <div class="about-text">
-                <p data-i18n="about.p1">Lone Lodge Studios is a remote-first studio with its heart in Västergötland, outside Gothenburg. We believe in health, balance, and that AI should enable creativity—not replace it.</p>
-                <p data-i18n="about.p2">Our experience spans MMOs, RPGs, casino, metaverse, and enterprise software. We work across C++, C#, Unreal, Unity, custom engines, UI/UX, gameplay systems, and ECS architecture.</p>
+        <div class="about-inner fade-in">
+            <div class="section-label" data-i18n="about.label">Who we are</div>
+            <h2 data-i18n="about.title">A lone lodge on the internet</h2>
+
+            <div class="about-grid">
+                <div class="about-text">
+                    <p data-i18n="about.p1">Lone Lodge Studios is a small, remote-first indie studio rooted in Sweden. We're not trying to become the next big thing — we're trying to build the right thing. With care. With passion. Without compromising.</p>
+                    <p data-i18n="about.p2">We believe craft beats speed. That health comes before deadlines. That AI should amplify creativity — not replace it. And that independence isn't a limitation; it's a superpower.</p>
+                    <p data-i18n="about.p3">No stock listing. No complex hierarchies. No crunch culture. Just a flat, passionate team working toward the same goal — and a community we treat as co-builders, not an audience.</p>
+                </div>
+
+                <div class="values-list">
+                    <div class="value-row">
+                        <div class="value-num">01</div>
+                        <div class="value-text">
+                            <strong data-i18n="value1.title">Health first</strong>
+                            <span data-i18n="value1.desc">The person behind the screen always matters more than the project in front of it.</span>
+                        </div>
+                    </div>
+                    <div class="value-row">
+                        <div class="value-num">02</div>
+                        <div class="value-text">
+                            <strong data-i18n="value2.title">Open by default</strong>
+                            <span data-i18n="value2.desc">We share our process, tools and learnings. Nothing stays private without good reason.</span>
+                        </div>
+                    </div>
+                    <div class="value-row">
+                        <div class="value-num">03</div>
+                        <div class="value-text">
+                            <strong data-i18n="value3.title">Community as co-builders</strong>
+                            <span data-i18n="value3.desc">Players and creators are part of what we build — not just people we build for.</span>
+                        </div>
+                    </div>
+                    <div class="value-row">
+                        <div class="value-num">04</div>
+                        <div class="value-text">
+                            <strong data-i18n="value4.title">Independent always</strong>
+                            <span data-i18n="value4.desc">No stock listing. No investors steering the vision. We build what we believe in.</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="about-stats">
-                <div class="stat"><div class="stat-value">7+</div><div class="stat-label" data-i18n="about.stat1">Years experience</div></div>
-                <div class="stat"><div class="stat-value">100%</div><div class="stat-label" data-i18n="about.stat2">Remote-first</div></div>
-                <div class="stat"><div class="stat-value">6+</div><div class="stat-label" data-i18n="about.stat3">Industries</div></div>
-                <div class="stat"><div class="stat-value">SE</div><div class="stat-label">Göteborg</div></div>
+
+            <div class="stats-row">
+                <div class="stat-item">
+                    <div class="stat-val">100%</div>
+                    <div class="stat-label" data-i18n="stat.remote">Remote-first</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-val">SE</div>
+                    <div class="stat-label" data-i18n="stat.location">Göteborg, Sweden</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-val">7+</div>
+                    <div class="stat-label" data-i18n="stat.years">Years building</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-val">∞</div>
+                    <div class="stat-label" data-i18n="stat.crunch">Crunch days</div>
+                    <div class="stat-sub" data-i18n="stat.crunch.sub">(zero, ever)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open / Community -->
+    <section id="open" class="section open-section">
+        <div class="open-inner fade-in">
+            <div class="section-label" data-i18n="open.label">Openness</div>
+            <h2 data-i18n="open.title">Easy to build with us</h2>
+            <p class="open-sub" data-i18n="open.subtitle">We share what we make. Creators, contributors and community are welcome — not as users, but as part of the studio.</p>
+
+            <div class="open-grid">
+                <div class="open-card">
+                    <div class="open-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3 data-i18n="open.card1.title">Creator tools</h3>
+                    <p data-i18n="open.card1.desc">Build your own stories in Storyteller. UGC, modding and plugin tools — coming as the platform grows.</p>
+                </div>
+                <div class="open-card">
+                    <div class="open-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                    </div>
+                    <h3 data-i18n="open.card2.title">Dev logs & process</h3>
+                    <p data-i18n="open.card2.desc">We share what we're building as we build it — failures included. Follow our journey openly.</p>
+                </div>
+                <div class="open-card">
+                    <div class="open-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3 data-i18n="open.card3.title">Contribute</h3>
+                    <p data-i18n="open.card3.desc">Got skills, ideas or stories? Low barrier, real influence. We make it easy to work with us.</p>
+                </div>
+                <div class="open-card">
+                    <div class="open-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
+                    <h3 data-i18n="open.card4.title">Open source</h3>
+                    <p data-i18n="open.card4.desc">Tools and utilities we build along the way. Shared freely when they're useful beyond our own walls.</p>
+                </div>
+            </div>
+
+            <div class="community-links">
+                <a data-link="discord" target="_blank" rel="noopener" class="community-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+                    <span data-i18n="community.discord">Join Discord</span>
+                </a>
+                <a data-link="github" target="_blank" rel="noopener" class="community-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <span data-i18n="community.github">GitHub</span>
+                </a>
+                <a data-link="twitter" target="_blank" rel="noopener" class="community-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    <span data-i18n="community.twitter">Follow us</span>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="section contact-section">
-        <div class="contact-box fade-in">
-            <div>
-                <h3 data-i18n="contact.title">Let's work together</h3>
-                <p data-i18n="contact.subtitle">Interested in our products, licensing, or collaboration?</p>
+        <div class="contact-inner fade-in">
+            <div class="contact-text">
+                <div class="section-label" data-i18n="contact.label">Get in touch</div>
+                <h2 data-i18n="contact.title">Let's talk</h2>
+                <p data-i18n="contact.subtitle">Interested in Storyteller, collaboration, or just want to say hi? The door is open.</p>
             </div>
-            <a data-email class="contact-email">
+            <a data-email class="contact-link">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                <span>support@lonelodgestudios.com</span>
+                support@lonelodgestudios.com
             </a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-socials">
-                <a data-link="twitter" target="_blank" rel="noopener" aria-label="Twitter"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-                <a data-link="discord" target="_blank" rel="noopener" aria-label="Discord"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg></a>
-                <a data-link="youtube" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-                <a data-link="github" target="_blank" rel="noopener" aria-label="GitHub"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+        <div class="footer-inner">
+            <div class="footer-left">
+                <img src="logo.png" alt="Lone Lodge Studios" class="footer-logo">
+                <p class="footer-tagline" data-i18n="footer.tagline">A lone lodge on the internet.</p>
+                <p class="footer-copy">Lone Lodge Studios · Göteborg, Sweden</p>
             </div>
-            <div class="footer-links">
-                <a href="#work" data-i18n="nav.work">Work</a>
-                <a href="#products" data-i18n="nav.products">Products</a>
-                <a href="#about" data-i18n="nav.about">About</a>
-                <a data-link="fabStore" target="_blank" rel="noopener">Fab Store</a>
+            <div class="footer-right">
+                <div class="footer-links">
+                    <a href="#storyteller" data-i18n="footer.storyteller">Storyteller</a>
+                    <a href="#about" data-i18n="footer.about">About</a>
+                    <a href="#open" data-i18n="footer.open">Open</a>
+                    <a href="#contact" data-i18n="footer.contact">Contact</a>
+                </div>
+                <div class="footer-socials">
+                    <a data-link="twitter" target="_blank" rel="noopener" aria-label="Twitter/X">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a data-link="discord" target="_blank" rel="noopener" aria-label="Discord">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+                    </a>
+                    <a data-link="youtube" target="_blank" rel="noopener" aria-label="YouTube">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                    <a data-link="github" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                </div>
             </div>
-            <p class="footer-copy">Lone Lodge Studios. Göteborg, Sweden.</p>
         </div>
     </footer>
 
