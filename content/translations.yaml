@@ -1,0 +1,97 @@
+en:
+  nav.home: "Home"
+  nav.work: "Work"
+  nav.about: "About"
+  nav.open: "Open"
+  nav.consulting: "Consulting"
+  nav.contact: "Contact"
+  nav.storyteller: "Storyteller"
+
+  hero.label: "A small lodge on the internet"
+  hero.title: "We build what we believe in."
+  hero.subtitle: "Lone Lodge Studios — an independent craft studio creating narrative games, systems and tools. Passionate, open, and here for the long run."
+  hero.cta1: "Discover Storyteller"
+  hero.cta2: "Get in touch"
+
+  manifesto.1: "Craft over speed"
+  manifesto.2: "People before deadlines"
+  manifesto.3: "Open by default"
+  manifesto.4: "Community as co-builders"
+  manifesto.5: "Independent always"
+  manifesto.6: "Health first"
+
+  section.work: "Selected work"
+  section.about: "About"
+  section.culture: "How we work"
+  section.open: "Open"
+  section.consulting: "Consulting"
+  section.contact: "Get in touch"
+
+  about.label: "Who we are"
+  about.title: "A lone lodge on the internet"
+
+  open.label: "Openness"
+  open.title: "Easy to build with us"
+  open.subtitle: "We share what we make. Creators, contributors and community are welcome — not as users, but as part of the studio."
+
+  contact.label: "Get in touch"
+  contact.title: "The door is always open."
+  contact.subtitle: "Interested in Storyteller, collaboration, or just want to say hi? The door is open."
+
+  footer.tagline: "A lone lodge on the internet."
+  footer.studio: "Studio"
+  footer.product: "Product"
+  footer.community: "Community"
+  footer.strip: "Built openly · Health first · Craft over speed · Independent always"
+
+  stat.remote: "Remote-first"
+  stat.location: "Göteborg, Sweden"
+
+sv:
+  nav.home: "Hem"
+  nav.work: "Arbeten"
+  nav.about: "Om"
+  nav.open: "Öppenhet"
+  nav.consulting: "Konsult"
+  nav.contact: "Kontakt"
+  nav.storyteller: "Storyteller"
+
+  hero.label: "En liten stuga på internet"
+  hero.title: "Vi bygger det vi tror på."
+  hero.subtitle: "Lone Lodge Studios — ett oberoende hantverksstudio som skapar narrativa spel, system och verktyg. Passionerat, öppet och här för lång tid."
+  hero.cta1: "Utforska Storyteller"
+  hero.cta2: "Kontakta oss"
+
+  manifesto.1: "Hantverk framför hastighet"
+  manifesto.2: "Människor före deadlines"
+  manifesto.3: "Öppna som standard"
+  manifesto.4: "Community som medbyggare"
+  manifesto.5: "Oberoende alltid"
+  manifesto.6: "Hälsa först"
+
+  section.work: "Utvalda arbeten"
+  section.about: "Om oss"
+  section.culture: "Så jobbar vi"
+  section.open: "Öppenhet"
+  section.consulting: "Konsult"
+  section.contact: "Kontakta oss"
+
+  about.label: "Vilka vi är"
+  about.title: "En ensam stuga på internet"
+
+  open.label: "Öppenhet"
+  open.title: "Lätt att jobba med oss"
+  open.subtitle: "Vi delar det vi bygger. Creators, bidragsgivare och community är välkomna — inte som användare, utan som en del av studiot."
+
+  contact.label: "Kontakt"
+  contact.title: "Dörren står alltid öppen."
+  contact.subtitle: "Intresserad av Storyteller, samarbete eller vill bara säga hej? Dörren är öppen."
+
+  footer.tagline: "En ensam stuga på internet."
+  footer.studio: "Studio"
+  footer.product: "Produkt"
+  footer.community: "Community"
+  footer.strip: "Byggt öppet · Hälsa först · Hantverk framför hastighet · Oberoende alltid"
+
+  stat.remote: "Remote-first"
+  stat.location: "Göteborg, Sverige"

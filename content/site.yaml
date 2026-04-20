@@ -1,0 +1,26 @@
+meta:
+  title: "Lone Lodge Studios"
+  description: "An independent craft studio creating narrative games, systems and tools. Passionate, open, and here for the long run."
+  url: "https://lone-lodge.github.io/homepage"
+
+hero:
+  eyebrow: "Indie studio · Göteborg, Sweden"
+  headline: "We build what we believe in."
+  subline: "An independent craft studio creating narrative games and tools. Passionate, open, and in it for the long run."
+  ctaPrimary:
+    label: "Discover Storyteller"
+    href: "#work"
+  ctaSecondary:
+    label: "Get in touch"
+    href: "#contact"
+
+social:
+  twitter: "https://twitter.com/lonelodge"
+  discord: "https://discord.gg/lonelodge"
+  youtube: "https://youtube.com/@lonelodge"
+  github: "https://github.com/Lone-Lodge"
+  fabStore: "https://fab.com/sellers/Lone%20Lodge%20Studios"
+  email: "support@lonelodgestudios.com"
+
+# TODO: fill in once Calendly is set up.
+calendly: ""

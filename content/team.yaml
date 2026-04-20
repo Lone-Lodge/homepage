@@ -1,0 +1,13 @@
+# Team members.
+# Add new team members by appending objects with the same shape.
+# - photo is optional; if empty, the team card renders initials in an ember circle.
+# - portfolio is the canonical "View portfolio" link.
+
+- slug: johan
+  name: "Johan Ottosson"
+  role: "Senior Unity / C# Developer"
+  bio: "15+ years shipping games and interactive systems. Ex-Starbreeze, MindArk, Hiber, NetEnt, IGT."
+  skills: ["Unity", "C#", "C++", "UE5", "UI systems", "Gameplay"]
+  portfolio: "https://johan-ott.github.io/jottossonportfolio/"
+  photo: ""  # TODO: add /team/johan.jpg
+  location: "Göteborg, Sweden"

@@ -1,0 +1,26 @@
+- category: "What we share openly"
+  tags:
+    - "Process & dev logs"
+    - "Mistakes & learnings"
+    - "Tools we build"
+    - "Design decisions"
+    - "Open source utilities"
+
+- category: "How to contribute"
+  tags:
+    - "Community stories (UGC)"
+    - "Modding & plugins"
+    - "Creator tools"
+    - "Feedback & playtesting"
+    - "Ideas & proposals"
+
+- category: "How we work"
+  tags:
+    - "Remote-first"
+    - "Async by default"
+    - "Flat structure"
+    - "Similar pay"
+    - "Health first"
+    - "No crunch"
+    - "Passion-driven"
+    - "Independent"
