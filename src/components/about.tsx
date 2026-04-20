@@ -15,7 +15,7 @@ export function About({ about }: { about: AboutData }) {
   const contentOpacity = useTransform(scrollYProgress, [0, 0.5], [0.2, 1]);
 
   return (
-    <section ref={sectionRef} id="about" className="py-24 px-6 lg:px-8">
+    <section ref={sectionRef} id="about" className="relative py-24 px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <motion.h2
           className="text-xs uppercase tracking-[0.12em] text-[var(--ll-fg-3)] mb-12"
