@@ -1,0 +1,34 @@
+eyebrow: "Consulting"
+headline: "Unity, C# and C++ development for games and interactive products."
+subline: "Lone Lodge Studios AB offers senior-level contract work alongside our own product development. Available for short engagements, long-term partnerships, or embedded team roles."
+
+pitch:
+  - title: "Who we are"
+    desc: "A small team of senior game developers with decades of shipped AAA, MMO and live-service experience."
+  - title: "What we build"
+    desc: "Gameplay systems, UI frameworks, tooling, ports, engine work. Unity, Unreal, C# and C++."
+  - title: "How we work"
+    desc: "Flat, remote-first, no crunch. We communicate openly and deliver what we promise."
+
+services:
+  - "Gameplay and systems programming"
+  - "UI and HUD systems"
+  - "Engine and tooling work"
+  - "Unity / Unreal / C# / C++"
+  - "Code review and architecture"
+  - "Technical leadership"
+
+worked_with:
+  - "Starbreeze"
+  - "MindArk"
+  - "Hiber"
+  - "NetEnt"
+  - "IGT"
+
+cta:
+  primary:
+    label: "Hire us"
+    href: "mailto:support@lonelodgestudios.com?subject=Consulting%20inquiry"
+  secondary:
+    label: "Book a call"
+    href: ""  # TODO: Calendly URL

@@ -1,0 +1,23 @@
+headline: "The door is always open."
+footer: "Lone Lodge Studios · Göteborg, Sweden · Remote-first · Independent"
+
+links:
+  - icon: "mail"
+    label: "Email"
+    value: "support@lonelodgestudios.com"
+    href: "mailto:support@lonelodgestudios.com"
+
+  - icon: "discord"
+    label: "Discord"
+    value: "discord.gg/lonelodge"
+    href: "https://discord.gg/lonelodge"
+
+  - icon: "github"
+    label: "GitHub"
+    value: "github.com/Lone-Lodge"
+    href: "https://github.com/Lone-Lodge"
+
+  - icon: "twitter"
+    label: "Twitter / X"
+    value: "@lonelodge"
+    href: "https://twitter.com/lonelodge"

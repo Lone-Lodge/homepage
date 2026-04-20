@@ -1,0 +1,27 @@
+- title: "Storyteller"
+  role: "Main product"
+  description: "A narrative roguelike where story and system are one. Every choice leaves a mark — every card a promise."
+  year: "In development"
+  tags: ["Unity", "Narrative", "Roguelike", "Card System"]
+  details: |
+    Storyteller is our flagship — a narrative roguelike built around an interactive book structure. Players navigate branching stories, using a limited hand of character-class cards at critical moments to shape direction and consequence.
+
+    Blood Mage, Rogue, Necromancer, Oracle — each class plays differently, each run tells a different story. No two runs are ever the same.
+
+    The platform vision extends beyond the game itself: UGC tools, community-created stories, creator economics and an open ecosystem for builders. We're building a world, not just a game.
+
+- title: "Nova UI Ecosystem"
+  role: "Developer tools"
+  description: "Production-ready UI plugins for Unreal Engine. Zero dependencies, fully modular."
+  year: "2024"
+  tags: ["C++", "Unreal Engine", "UE5", "UI Systems"]
+  details: |
+    A suite of professional UI components for Unreal Engine developers. Nova Radial Menu, Toast notifications, Damage Numbers, Health Bars — each built to production standards with zero external dependencies. Available on the Fab marketplace.
+
+- title: "Creator Platform"
+  role: "Coming next"
+  description: "Tools for community creators to build and publish their own Storyteller narratives."
+  year: "Upcoming"
+  tags: ["UGC", "Modding", "Plugin System", "Community"]
+  details: |
+    The next phase of Storyteller's growth — an open platform for creators to write, build and publish their own stories within our ecosystem. Low barrier to entry, real influence, fair economics. Built with the community, not for it.

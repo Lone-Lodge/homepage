@@ -1,0 +1,229 @@
+@import url("https://rsms.me/inter/inter.css");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Lora:ital,wght@0,500;1,400&display=swap");
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================
+   Lone Lodge tokens (from designsystem/colors_and_type.css)
+   ============================================ */
+:root {
+  /* Surface scale — near black */
+  --ll-bg-0: #08080a;
+  --ll-bg-1: #0d0d10;
+  --ll-bg-2: #131318;
+  --ll-bg-3: #1a1a21;
+  --ll-bg-4: #23232c;
+
+  /* Foregrounds */
+  --ll-fg-1: #f5f5f7;
+  --ll-fg-2: #b4b4bd;
+  --ll-fg-3: #80808c;
+  --ll-fg-4: #55555f;
+
+  /* Borders */
+  --ll-border-1: rgba(255, 255, 255, 0.06);
+  --ll-border-2: rgba(255, 255, 255, 0.09);
+  --ll-border-3: rgba(255, 255, 255, 0.14);
+
+  /* Ember — the one accent */
+  --ll-ember: #b85a3a;
+  --ll-ember-hover: #c96a48;
+  --ll-ember-press: #a64e30;
+  --ll-ember-dim: rgba(184, 90, 58, 0.14);
+  --ll-ember-ring: rgba(184, 90, 58, 0.45);
+  --ll-ember-fg: #ffffff;
+
+  /* Tracking */
+  --ll-track-tight: -0.022em;
+  --ll-track-snug: -0.012em;
+  --ll-track-normal: -0.003em;
+  --ll-track-wide: 0.04em;
+  --ll-track-eyebrow: 0.12em;
+
+  /* Motion */
+  --ll-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ll-dur-fast: 120ms;
+  --ll-dur-med: 220ms;
+  --ll-dur-slow: 400ms;
+
+  /* Shadows — structural only */
+  --ll-shadow-1: 0 1px 0 rgba(255, 255, 255, 0.02) inset, 0 1px 2px rgba(0, 0, 0, 0.4);
+  --ll-shadow-2: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 2px 8px rgba(0, 0, 0, 0.5);
+  --ll-shadow-3: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 12px 32px rgba(0, 0, 0, 0.6);
+
+  /* Semantic mapping — default is DARK because the system is dark-first. */
+  --background: var(--ll-bg-0);
+  --foreground: var(--ll-fg-1);
+  --card: var(--ll-bg-2);
+  --card-foreground: var(--ll-fg-1);
+  --primary: var(--ll-ember);
+  --primary-foreground: var(--ll-ember-fg);
+  --secondary: var(--ll-bg-2);
+  --secondary-foreground: var(--ll-fg-2);
+  --muted: var(--ll-bg-1);
+  --muted-foreground: var(--ll-fg-3);
+  --accent: var(--ll-ember);
+  --accent-foreground: var(--ll-ember-fg);
+  --border: var(--ll-border-2);
+  --ring: var(--ll-ember-ring);
+  --radius: 0.75rem; /* 12px — card radius */
+}
+
+/* Light theme — still near-grayscale, ember stays ember. */
+:root:not(.dark) {
+  --background: #fafaf8;
+  --foreground: #141418;
+  --card: #ffffff;
+  --card-foreground: #141418;
+  --primary: var(--ll-ember);
+  --primary-foreground: #ffffff;
+  --secondary: #f1f1ee;
+  --secondary-foreground: #2a2a2e;
+  --muted: #f5f5f2;
+  --muted-foreground: #66666c;
+  --accent: var(--ll-ember);
+  --accent-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.09);
+  --ring: var(--ll-ember-ring);
+}
+
+.dark {
+  --background: var(--ll-bg-0);
+  --foreground: var(--ll-fg-1);
+  --card: var(--ll-bg-2);
+  --card-foreground: var(--ll-fg-1);
+  --secondary: var(--ll-bg-2);
+  --secondary-foreground: var(--ll-fg-2);
+  --muted: var(--ll-bg-1);
+  --muted-foreground: var(--ll-fg-3);
+  --accent: var(--ll-ember);
+  --accent-foreground: var(--ll-ember-fg);
+  --border: var(--ll-border-2);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+
+  --color-ember: var(--ll-ember);
+  --color-ember-hover: var(--ll-ember-hover);
+  --color-ember-press: var(--ll-ember-press);
+
+  --color-bg-0: var(--ll-bg-0);
+  --color-bg-1: var(--ll-bg-1);
+  --color-bg-2: var(--ll-bg-2);
+  --color-bg-3: var(--ll-bg-3);
+  --color-bg-4: var(--ll-bg-4);
+
+  --color-fg-1: var(--ll-fg-1);
+  --color-fg-2: var(--ll-fg-2);
+  --color-fg-3: var(--ll-fg-3);
+  --color-fg-4: var(--ll-fg-4);
+
+  --font-sans: "Inter", "Inter var", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-serif: "Lora", Georgia, serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01", "ss03";
+    font-variant-ligatures: common-ligatures contextual;
+    letter-spacing: var(--ll-track-normal);
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(255, 255, 255, 0.18);
+    color: var(--foreground);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ll-ember-ring);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+/* Hero cursor glow — ember tint at 3% */
+.hero-glow {
+  pointer-events: none;
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(184, 90, 58, 0.08) 0%,
+    transparent 70%
+  );
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  transition: opacity 0.3s ease;
+}
+
+:root:not(.dark) .hero-glow {
+  background: radial-gradient(
+    circle,
+    rgba(184, 90, 58, 0.06) 0%,
+    transparent 70%
+  );
+}
+
+/* Noise texture overlay — 2% fractal noise, fixed on body */
+.noise-overlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+@media print {
+  @page {
+    margin: 1.5cm;
+    size: A4;
+  }
+
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .hero-glow,
+  .noise-overlay::before {
+    display: none;
+  }
+}
